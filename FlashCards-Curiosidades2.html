@@ -1,0 +1,3276 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Flashcards de Mitos e Verdades</title>
+
+    <style>
+
+        /* --- Reset e Estilos Globais --- */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- Cabeçalho e Navegação --- */
+
+        header {
+            background-color: #2c3e50;
+            color: #ffffff;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+        }
+
+        nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #3498db;
+        }
+
+        /* --- Conteúdo Principal --- */
+
+        main {
+            flex: 1;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            width: 100%;
+            text-align: center;
+        }
+
+        main h2 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+        }
+
+        /* --- Grade de Flashcards --- */
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            justify-items: center;
+        }
+
+        /* --- Estrutura do Card e Efeito 3D --- */
+
+        .flashcard {
+            background-color: transparent;
+            width: 100%;
+            max-width: 350px;
+            height: 420px;
+            perspective: 1000px;
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s ease;
+            transform-style: preserve-3d;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+
+        /* Ativa a rotação ao passar o mouse */
+
+        .flashcard:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        /* Estilo comum para Frente e Verso */
+
+        .card-front,
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+            padding: 1.5rem;
+        }
+
+        /* Frente do Card */
+
+        .card-front {
+            background-color: #ffffff;
+            border-top: 6px solid #e74c3c;
+            color: #2c3e50;
+        }
+
+        /* Verso do Card */
+
+        .card-back {
+            background-color: #ffffff;
+            border-top: 6px solid #2ecc71;
+            color: #2c3e50;
+            transform: rotateY(180deg);
+        }
+
+        /* Elementos Internos */
+
+        .card-image-container {
+            width: 100%;
+            height: 200px;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #ecf0f1;
+        }
+
+        .card-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge-mito {
+            background-color: #fadbd8;
+            color: #c0392b;
+        }
+
+        .badge-verdade {
+            background-color: #d4efdf;
+            color: #27ae60;
+        }
+
+        .card-text {
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+        }
+
+        /* --- Rodapé --- */
+
+        footer {
+            background-color: #2c3e50;
+            color: #ffffff;
+            text-align: center;
+            padding: 1.2rem;
+            font-size: 0.9rem;
+            margin-top: auto;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Cabeçalho Principal -->
+
+    <header>
+
+        <h1>Confere Aí</h1>
+
+        <nav>
+
+            <a href="#inicio">Início</a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- Seção Principal -->
+
+    <main id="inicio">
+
+        <h2>Descubra a verdade passando o mouse</h2>
+
+        <section class="cards-container">
+
+
+            <!-- =====================================================
+                 FLASHCARDS 1 A 16 - CARDS ORIGINAIS
+                 ===================================================== -->
+
+
+            <!-- Flashcard 1 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80"
+                                     alt="Pessoa fazendo exercício físico intenso na academia">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Exercícios abdominais isolados queimam a gordura localizada na barriga."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80"
+                                     alt="Prato com salada fresca e alimentos saudáveis equilibrados">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            A perda de gordura ocorre de forma sistêmica no corpo, impulsionada por déficit calórico e exercícios gerais, não apenas em uma área específica.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 2 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80"
+                                     alt="Cenário de praia ensolarada com o mar azul">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Usar protetor solar em dias nublados ou chuvosos é totalmente desnecessário."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=600&q=80"
+                                     alt="Frasco de protetor solar">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            A radiação ultravioleta ainda pode atingir a pele em dias nublados. Por isso, a proteção solar continua sendo importante.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 3 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80"
+                                     alt="Estudante escrevendo em um caderno">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Só copiar a matéria do quadro ou do livro é o suficiente para aprender."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80"
+                                     alt="Grupo de estudantes estudando">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Copiar é apenas um registro. O aprendizado exige compreensão, reflexão, prática e recuperação ativa das informações.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 4 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=600&q=80"
+                                     alt="Paisagem de inverno">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Quando a janela é aberta, o frio entra e esfria a sala."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&fit=crop&w=600&q=80"
+                                     alt="Representação de energia térmica">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            O calor é transferido de regiões mais quentes para regiões mais frias. Não existe um "frio" entrando como uma substância.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 5 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=600&q=80"
+                                     alt="Cérebro humano em ilustração">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Nós usamos apenas 10% da capacidade do nosso cérebro no dia a dia."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&w=600&q=80"
+                                     alt="Pessoa concentrada">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            O cérebro utiliza muitas regiões diferentes ao longo do dia. A ideia de que usamos somente 10% é um mito popular.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 6 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?auto=format&fit=crop&w=600&q=80"
+                                     alt="Peixe dourado em um aquário">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "O peixe-dourado tem memória de apenas 3 segundos."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?auto=format&fit=crop&w=600&q=80"
+                                     alt="Peixe nadando">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Peixes podem aprender associações e lembrar de determinados estímulos por períodos muito maiores do que alguns segundos.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 7 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=600&q=80"
+                                     alt="Touro em uma fazenda">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Touros ficam furiosos ao ver a cor vermelha."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=600&q=80"
+                                     alt="Animal em ambiente rural">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            O touro reage principalmente ao movimento da capa. A cor vermelha não é responsável pela agressividade do animal.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 8 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?auto=format&fit=crop&w=600&q=80"
+                                     alt="Doces coloridos">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Comer muito açúcar deixa as crianças instantaneamente hiperativas."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80"
+                                     alt="Crianças brincando">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Estudos não sustentam a ideia de que o açúcar cause diretamente hiperatividade. O ambiente também influencia bastante o comportamento.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 9 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?auto=format&fit=crop&w=600&q=80"
+                                     alt="Peixe dourado">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Peixes não conseguem reconhecer seus donos."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?auto=format&fit=crop&w=600&q=80"
+                                     alt="Aquário com peixes">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Algumas espécies conseguem aprender a reconhecer padrões, pessoas e estímulos associados à alimentação.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 10 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1531386151447-fd76ad50012f?auto=format&fit=crop&w=600&q=80"
+                                     alt="Camaleão">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Os camaleões mudam de cor apenas para se camuflar."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1504457047772-27faf1c00561?auto=format&fit=crop&w=600&q=80"
+                                     alt="Camaleão com diferentes tonalidades">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            A mudança de cor também pode estar ligada à comunicação, ao estado emocional e à temperatura.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 11 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=600&q=80"
+                                     alt="Copo de água">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Beber água com açúcar é uma cura comprovada para o soluço."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&w=600&q=80"
+                                     alt="Açúcar e água">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Não existe evidência forte de que água com açúcar seja uma cura garantida. O soluço geralmente desaparece espontaneamente.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 12 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=600&q=80"
+                                     alt="Grande Muralha da China">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "A Grande Muralha da China pode ser vista facilmente da Lua."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1548919973-5cef591cdbc9?auto=format&fit=crop&w=600&q=80"
+                                     alt="Muralha da China">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Apesar de ser enorme, a muralha é estreita em relação à distância da Lua e não é facilmente identificável a olho nu de lá.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 13 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1461511669078-d46bf351cd6e?auto=format&fit=crop&w=600&q=80"
+                                     alt="Relâmpago durante tempestade">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Um raio nunca cai duas vezes no mesmo lugar."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1594156596782-656c93e4d504?auto=format&fit=crop&w=600&q=80"
+                                     alt="Tempestade com raios">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Raios podem atingir o mesmo local diversas vezes, especialmente estruturas altas e expostas.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 14 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1607153333879-c174d265f1d2?auto=format&fit=crop&w=600&q=80"
+                                     alt="Golfinho no oceano">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Golfinhos respiram debaixo da água como os peixes."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80"
+                                     alt="Golfinho próximo da superfície">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Golfinhos são mamíferos e respiram ar pelos pulmões. Eles precisam chegar à superfície para respirar.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 15 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1532693322450-2cb5c511067d?auto=format&fit=crop&w=600&q=80"
+                                     alt="Lua no céu">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Existe um lado da Lua que nunca recebe luz solar."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=600&q=80"
+                                     alt="Lua iluminada">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Toda a Lua recebe luz solar em algum momento. O chamado lado oculto é apenas o lado que não fica voltado para a Terra.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 16 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&w=600&q=80"
+                                     alt="Avestruz correndo">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Quando fica com medo, o avestruz enterra a cabeça na areia."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1535338454770-8be927b5a00b?auto=format&fit=crop&w=600&q=80"
+                                     alt="Avestruz">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Isso é um mito. O avestruz pode fugir em alta velocidade ou se abaixar diante de uma ameaça, mas não enterra a cabeça na areia.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =====================================================
+                 NOVOS FLASHCARDS 17 A 60
+                 ===================================================== -->
+
+
+            <!-- Flashcard 17 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=600&q=80"
+                                     alt="Livro aberto">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Ler uma matéria uma única vez garante que ela ficará na memória."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=600&q=80"
+                                     alt="Pessoa estudando">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Revisão espaçada, prática de recuperação e aplicação do conteúdo ajudam a fortalecer a memória.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 18 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80"
+                                     alt="Paisagem natural">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Desertos são lugares onde nunca chove."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=600&q=80"
+                                     alt="Deserto">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Desertos recebem pouca precipitação, mas podem ocorrer chuvas, algumas vezes de maneira intensa.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 19 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=600&q=80"
+                                     alt="Montanhas">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "O Everest é a montanha mais próxima do espaço."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80"
+                                     alt="Montanha alta">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            O Everest é o ponto mais alto acima do nível do mar, mas o Chimborazo fica mais distante do centro da Terra devido ao formato do planeta.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 20 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=600&q=80"
+                                     alt="Gato doméstico">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Gatos sempre caem de pé, independentemente da altura."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1533743983669-94fa5c4338ec?auto=format&fit=crop&w=600&q=80"
+                                     alt="Gato">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Gatos possuem um reflexo que ajuda a orientar o corpo durante uma queda, mas isso não significa que quedas sejam sempre seguras.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 21 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=600&q=80"
+                                     alt="Cachorro">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Cães enxergam o mundo completamente em preto e branco."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=600&q=80"
+                                     alt="Cachorro olhando para câmera">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Cães percebem algumas cores, embora sua visão de cores seja diferente da visão humana.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 22 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=600&q=80"
+                                     alt="Bananas">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Bananas crescem em árvores."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=600&q=80"
+                                     alt="Cacho de bananas">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            A bananeira é uma planta herbácea gigante. Seu caule não é um tronco lenhoso como o de uma árvore.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 23 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=600&q=80"
+                                     alt="Floresta">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "As árvores produzem oxigênio somente durante a noite."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&q=80"
+                                     alt="Floresta verde">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            A fotossíntese ocorre principalmente com luz e produz oxigênio. À noite, a fotossíntese para por falta de luz.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 24 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=600&q=80"
+                                     alt="Natureza">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "O clima e o tempo são exatamente a mesma coisa."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1534088568595-a066f410bcda?auto=format&fit=crop&w=600&q=80"
+                                     alt="Nuvens no céu">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Tempo descreve condições atmosféricas de curto prazo. Clima representa padrões atmosféricos observados durante períodos longos.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 25 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80"
+                                     alt="Computador">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Computadores entendem pensamentos humanos diretamente."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80"
+                                     alt="Tecnologia">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Computadores podem interpretar determinados sinais cerebrais com tecnologias específicas, mas isso não equivale a ler pensamentos livremente.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 26 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80"
+                                     alt="Dragão representado em fantasia">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Dinossauros e humanos viveram juntos na mesma época."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1605117882932-f9e32b03fea9?auto=format&fit=crop&w=600&q=80"
+                                     alt="Fóssil">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Os dinossauros não aviários foram extintos milhões de anos antes do surgimento dos humanos modernos.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 27 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=600&q=80"
+                                     alt="Montanha">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "A água sempre ferve exatamente a 100 °C."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1603394630850-7e4b6e7ad6c9?auto=format&fit=crop&w=600&q=80"
+                                     alt="Água fervendo">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Ao nível do mar, a água pura ferve aproximadamente a 100 °C. Em altitudes maiores, a pressão atmosférica muda e o ponto de ebulição diminui.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 28 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=600&q=80"
+                                     alt="Planta verde">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Plantas não respiram."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=600&q=80"
+                                     alt="Planta em vaso">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Plantas realizam respiração celular para obter energia. A fotossíntese e a respiração são processos diferentes.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 29 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=600&q=80"
+                                     alt="Livros">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "A memória humana funciona como uma gravação perfeita."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=600&q=80"
+                                     alt="Biblioteca">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            A memória é reconstruída e pode ser influenciada por emoções, informações posteriores e pelo contexto.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 30 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80"
+                                     alt="Lua cheia">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "A Lua produz sua própria luz."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=600&q=80"
+                                     alt="Céu noturno">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            A Lua não produz luz visível própria. O brilho que observamos é principalmente a luz do Sol refletida por sua superfície.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 31 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=600&q=80"
+                                     alt="Água do oceano">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "A água do mar é salgada porque os peixes deixam sal nela."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80"
+                                     alt="Oceano">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Os sais dissolvidos nos oceanos vêm principalmente do intemperismo das rochas e de processos geológicos e hidroquímicos.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 32 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=600&q=80"
+                                     alt="Eletricidade">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "A eletricidade é armazenada dentro das tomadas."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80"
+                                     alt="Circuito eletrônico">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            A tomada fornece uma diferença de potencial elétrico que permite a circulação de corrente quando um circuito é conectado.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 33 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=600&q=80"
+                                     alt="Crianças estudando">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Pessoas inteligentes não precisam estudar."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80"
+                                     alt="Pessoa estudando">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Conhecimento e habilidades são desenvolvidos com prática, estudo, experiência e dedicação, independentemente da facilidade inicial.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 34 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=600&q=80"
+                                     alt="Câmera fotográfica">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Uma fotografia sempre representa exatamente a realidade."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=600&q=80"
+                                     alt="Câmera">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Enquadramento, iluminação, lente, exposição e edição podem alterar a forma como uma cena é representada.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 35 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80"
+                                     alt="Planeta Terra">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "A Terra é perfeitamente redonda."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?auto=format&fit=crop&w=600&q=80"
+                                     alt="Terra vista do espaço">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            A Terra é aproximadamente esférica, mas possui um formato ligeiramente achatado nos polos e irregularidades causadas pela distribuição de massa.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- Flashcard 37 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=600&q=80"
+                                     alt="Floresta">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Todas as árvores são verdes durante o ano inteiro."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=600&q=80"
+                                     alt="Paisagem natural">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Algumas árvores perdem as folhas em determinadas estações e podem apresentar diferentes cores antes da queda.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 38 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80"
+                                     alt="Fóssil">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Fósseis são sempre ossos de animais."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1605117882932-f9e32b03fea9?auto=format&fit=crop&w=600&q=80"
+                                     alt="Fóssil preservado">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Fósseis podem incluir ossos, dentes, conchas, folhas, pegadas e até marcas deixadas por organismos.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 39 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=600&q=80"
+                                     alt="Números e matemática">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Zero é um número positivo."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=600&q=80"
+                                     alt="Fórmulas matemáticas">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Zero não é considerado positivo nem negativo. Ele funciona como um ponto de referência entre os números positivos e negativos.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 40 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80"
+                                     alt="Paisagem">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "O arco-íris é um objeto que fica parado no céu."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80"
+                                     alt="Céu colorido">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            O arco-íris é um fenômeno óptico causado pela interação da luz com gotas de água. Sua aparência depende da posição do observador e da fonte de luz.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 41 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=600&q=80"
+                                     alt="Gato">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Gatos ronronam somente quando estão felizes."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?auto=format&fit=crop&w=600&q=80"
+                                     alt="Gato doméstico">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            O ronronar pode aparecer em situações positivas, mas também pode ocorrer durante estresse, desconforto ou como forma de comunicação.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- Flashcard 43 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=600&q=80"
+                                     alt="Matemática">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "A matemática é apenas uma questão de decorar fórmulas."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=600&q=80"
+                                     alt="Equações matemáticas">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Compreender conceitos e relações matemáticas permite resolver problemas mesmo quando a fórmula não foi simplesmente decorada.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 44 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=600&q=80"
+                                     alt="Placa eletrônica">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Um computador fica mais rápido simplesmente porque tem mais armazenamento."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=600&q=80"
+                                     alt="Componentes de computador">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Armazenamento e desempenho são coisas diferentes. Processador, memória RAM, armazenamento e outros componentes influenciam o desempenho.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 45 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=600&q=80"
+                                     alt="Biblioteca">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Dormir é apenas um período em que o cérebro fica completamente desligado."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1511295742362-92c96b1cf484?auto=format&fit=crop&w=600&q=80"
+                                     alt="Pessoa dormindo">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Durante o sono, o cérebro permanece ativo e participa de processos relacionados à memória, regulação e recuperação do organismo.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 46 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1495567720989-cebdbdd97913?auto=format&fit=crop&w=600&q=80"
+                                     alt="Pessoa dormindo">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Sonhamos somente durante uma única fase do sono."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1511295742362-92c96b1cf484?auto=format&fit=crop&w=600&q=80"
+                                     alt="Sono">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Sonhos podem ocorrer em diferentes fases do sono, embora sejam especialmente associados ao sono REM.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 47 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=600&q=80"
+                                     alt="Cérebro humano">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "O cérebro humano não consegue criar novas conexões depois da infância."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=600&q=80"
+                                     alt="Cérebro">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            O cérebro apresenta neuroplasticidade e pode modificar conexões e circuitos em resposta a experiências e aprendizagem ao longo da vida.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 48 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=600&q=80"
+                                     alt="Pessoa em apresentação">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Multitarefa sempre permite fazer várias coisas com a mesma eficiência."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=600&q=80"
+                                     alt="Pessoa trabalhando">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Alternar constantemente entre tarefas pode aumentar o tempo necessário e favorecer erros, especialmente em atividades complexas.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 49 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80"
+                                     alt="Equipe trabalhando">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Trabalhar mais horas sempre significa produzir mais."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=600&q=80"
+                                     alt="Escritório">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Produtividade depende também de descanso, organização, foco, condições de trabalho e qualidade das decisões.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 50 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80"
+                                     alt="Pessoa lendo">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Ler mais rápido sempre significa compreender mais."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=600&q=80"
+                                     alt="Livro aberto">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Velocidade de leitura e compreensão são habilidades diferentes. A melhor velocidade depende da dificuldade e do objetivo do texto.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 51 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=600&q=80"
+                                     alt="Montanha">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "A água de um rio sempre corre em linha reta."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1437482078695-73f5ca6c96e2?auto=format&fit=crop&w=600&q=80"
+                                     alt="Rio em uma paisagem">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Rios podem apresentar curvas e meandros devido à erosão, sedimentação, relevo e características do terreno.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 52 -->
+
+            <!-- Flashcard 53 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=600&q=80"
+                                     alt="Plantas">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Cortar uma árvore sempre faz com que ela cresça novamente."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80"
+                                     alt="Floresta">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Algumas espécies conseguem rebrotar, mas isso depende da espécie, da região cortada, da idade da planta e das condições ambientais.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 54 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600&q=80"
+                                     alt="Carro">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Carros elétricos não produzem nenhum impacto ambiental."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=600&q=80"
+                                     alt="Carro elétrico">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Veículos elétricos não são livres de impactos. Produção de baterias, geração de eletricidade e descarte também possuem impactos ambientais.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 55 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=600&q=80"
+                                     alt="Montanha">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Quanto mais alto estamos, mais oxigênio existe no ar."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=600&q=80"
+                                     alt="Montanhas">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            A proporção de oxigênio no ar permanece aproximadamente semelhante, mas a pressão atmosférica diminui em grandes altitudes, reduzindo a quantidade de oxigênio disponível por volume de ar.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 56 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=600&q=80"
+                                     alt="Livro aberto">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Fazer anotações à mão é sempre pior do que digitar."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80"
+                                     alt="Pessoa escrevendo à mão">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            O método depende da tarefa. Escrever à mão pode favorecer a seleção e organização das ideias, enquanto digitar pode ser mais rápido.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 57 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=600&q=80"
+                                     alt="Floresta">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Todos os animais enxergam o mundo da mesma maneira que os humanos."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=600&q=80"
+                                     alt="Animais">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Cada espécie possui capacidades sensoriais diferentes. Algumas percebem cores, sons, cheiros ou frequências que os humanos não conseguem perceber.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 58 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=600&q=80"
+                                     alt="Campo verde">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Todo gás é invisível."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=600&q=80"
+                                     alt="Natureza">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Muitos gases são invisíveis, mas alguns podem apresentar cores perceptíveis em determinadas condições.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 59 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=600&q=80"
+                                     alt="Pessoa apresentando">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Errar durante o aprendizado significa que a pessoa não é capaz de aprender."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80"
+                                     alt="Sala de aula">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Erros podem revelar lacunas de conhecimento e ajudar a direcionar a prática e a correção durante o processo de aprendizagem.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Flashcard 60 -->
+
+            <article class="flashcard">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <div>
+
+                            <span class="badge badge-mito">Mito</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=600&q=80"
+                                     alt="Pessoa trabalhando em escritório">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            "Organização significa deixar todas as tarefas ocupando o mesmo nível de prioridade."
+                        </p>
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <div>
+
+                            <span class="badge badge-verdade">Verdade</span>
+
+                            <div class="card-image-container">
+
+                                <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=600&q=80"
+                                     alt="Mesa organizada com computador e materiais">
+
+                            </div>
+
+                        </div>
+
+                        <p class="card-text">
+                            Uma boa organização envolve identificar prioridades, prazos e importância para decidir o que deve ser feito primeiro.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- Rodapé -->
+
+    <footer>
+
+        <p>Projeto feito por Fred S.G</p>
+
+    </footer>
+
+
+</body>
+
+</html>
